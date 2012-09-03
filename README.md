@@ -28,18 +28,15 @@ or from source:
 
 First, import the required modules:
 
-    :::python
         >>> import redis
         >>> from rapmedusa import emit, map_reduce
 
 Next, connect to a running Redis instance in the usual way:
 
-    :::python
         >>> redis = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 Finally, implementations of the map and reduce functions must be provided, and passed into a call to the map_reduce() function, along with the active connection to the Redis server:
 
-    :::python
         >>> def myMap(key, val):
                 ...
                 emit(newKey, newVal)
@@ -85,7 +82,6 @@ You'll rarely need to override the default values for sortedKey and sortedKeySet
 This example demonstrates a MapReduce job in which the input keys are mapped to person records, and the map function generates keys 
 based on one of the record entries, `age`.
 
-    :::python
 	>>> import redis
 	>>> from rapmedusa import *
 	
